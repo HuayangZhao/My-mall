@@ -1,0 +1,50 @@
+html,
+body,
+a,
+ul,
+li,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+input,
+form,
+button,
+span,
+i,
+img {
+  margin: 0;
+  padding: 0;
+}
+li,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.my-header {
+  background-color: #ff8a00;
+}
+.my-header h1 {
+  color: #fff;
+}
+.my-header .mui-icon-search {
+  color: #fff;
+}
+.my-footer {
+  background-color: #ff8a00;
+}
+.my-footer a.mui-tab-item {
+  color: #fff;
+}
+.my-footer .mui-tab-item.mui-active {
+  color: #000;
+  font-weight: 900;
+}
+/*# sourceMappingURL=base.css.map */
