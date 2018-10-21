@@ -1,0 +1,33 @@
+html,body,a,ul,li,ol,p,h1,h2,h3,h4,h5,h6,div,input,form,button,span,i,img {
+    margin: 0;
+    padding: 0;
+}
+li,ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+//主题色
+@baseColor:#ff8a00;
+//字体白色
+@whiteColor:#fff;
+.my-header {
+    background-color: @baseColor;
+    h1 {
+        color: @whiteColor;
+    }
+    .mui-icon-search {
+        color: @whiteColor;
+    }
+}
+.my-footer {
+    background-color: @baseColor;
+    a.mui-tab-item{
+        color: @whiteColor;
+    }
+    .mui-tab-item.mui-active {
+        color: #000;
+        font-weight: 900;
+    }
+}
