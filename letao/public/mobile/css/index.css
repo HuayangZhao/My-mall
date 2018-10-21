@@ -1,0 +1,86 @@
+.bigBox {
+  margin-top: 44px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.mui-content.banner {
+  padding-bottom: 0;
+}
+.allProduct {
+  width: 100%;
+  padding: 10px;
+}
+.allProduct li {
+  width: 33.3333%;
+  float: left;
+}
+.allProduct li img {
+  display: block;
+  width: 100%;
+}
+.brand {
+  width: 100%;
+  padding: 0 10px;
+}
+.brand > a img {
+  width: 100%;
+}
+.brand li {
+  float: left;
+  width: 25%;
+}
+.brand li img {
+  display: block;
+  width: 100%;
+}
+.area {
+  overflow: hidden;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.area > a img {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+}
+.area li {
+  float: left;
+  padding: 5px;
+  width: 50%;
+}
+.area li .shadow {
+  box-shadow: 0 0 5px #ccc;
+  padding-bottom: 10px;
+}
+.area li .shadow img {
+  width: 100%;
+}
+.area li .shadow a:first-child {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+.area li .shadow a:first-child p {
+  text-align: center;
+  margin: 5px 0;
+}
+.area li .shadow a:first-child span {
+  font-size: 12px;
+  color: red;
+}
+.area li .shadow a:first-child del {
+  font-size: 12px;
+  color: #ccc;
+}
+.area li .shadow a:last-child {
+  display: block;
+  width: 40%;
+  height: 30px;
+  margin: 0px auto;
+  background-color: #ff8a00;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  font-size: 12px;
+}
+/*# sourceMappingURL=index.css.map */
