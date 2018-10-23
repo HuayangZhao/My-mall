@@ -1,0 +1,25 @@
+.my-header .mui-icon-back {
+  color: #fff;
+}
+.my-content {
+  position: absolute;
+  width: 100%;
+  /*这里通过绝对定位给top和bottom给盒子限定高度*/
+  top: 44px;
+  bottom: 50px;
+  overflow: hidden;
+}
+.my-content .leftClassify {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100%;
+  background-color: pink;
+}
+.my-content .rightClassify {
+  position: relative;
+  height: 100%;
+  margin-left: 110px ;
+  background-color: #ccc;
+}
+/*# sourceMappingURL=categort.css.map */
