@@ -8,18 +8,54 @@
   top: 44px;
   bottom: 50px;
   overflow: hidden;
+  background-color: #eee;
 }
 .my-content .leftClassify {
   position: relative;
   float: left;
   width: 100px;
   height: 100%;
-  background-color: pink;
+}
+.my-content .leftClassify a {
+  display: block;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #ccc;
+  color: #000;
+  font-size: 14px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  background-color: #fff;
+}
+.my-content .leftClassify a.active {
+  border-right: 1px solid transparent;
+  background-color: #eee;
 }
 .my-content .rightClassify {
   position: relative;
   height: 100%;
   margin-left: 110px ;
-  background-color: #ccc;
+}
+.my-content .rightClassify ul {
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 15px;
+  padding: 10px;
+}
+.my-content .rightClassify li {
+  width: 33.333%;
+  float: left;
+}
+.my-content .rightClassify li img {
+  width: 100%;
+}
+.my-content .rightClassify li p {
+  text-align: center;
+}
+.resources {
+  padding-left: 10px;
+  color: red;
+  font-size: 14px;
 }
 /*# sourceMappingURL=categort.css.map */
