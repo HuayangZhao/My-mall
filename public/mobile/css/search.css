@@ -1,0 +1,47 @@
+.searchBox {
+  position: absolute;
+  top: 65px;
+  bottom: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+.searchBox .searchText {
+  position: relative;
+}
+.searchBox .searchText input,
+.searchBox .searchText button {
+  outline: none;
+  border: none;
+  border: 1px solid #ff8a00;
+  border-radius: 0px;
+}
+.searchBox .searchText input {
+  padding: 0px;
+  padding-right: 80px;
+  margin-bottom: 0;
+  width: 100%;
+}
+.searchBox .searchText button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  background-color: #ff8a00;
+}
+.searchBox .history {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+.searchBox .history span {
+  color: #666;
+  font-size: 14px;
+  display: inline-block;
+  width: 49%;
+}
+.searchBox .history span:nth-of-type(2) {
+  text-align: right;
+}
+/*# sourceMappingURL=search.css.map */
