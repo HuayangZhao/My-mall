@@ -59,7 +59,30 @@ $(function(){
 ```
 
 ### 搜索页
-- [ ] 页面布局
-- [ ] 通过关键字搜索渲染
-- [ ] 通过价格，销量搜索渲染
-- [ ] 实现页面跳转
+- [x] 页面布局 --完成
+- [x] 通过关键字搜索渲染 --完成
+- [x] 通过价格，销量筛选搜索渲染 --完成
+- [x] 实现上拉分页加载 --完成
+- [x] 解决mui默认阻止a标签的跳转行为，实现页面间跳转 --完成
+
+##### 上拉加载初始化
+```javascript
+   mui.init({
+  pullRefresh : {
+    container:refreshContainer,//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+    up : {
+      height:50,//可选.默认50.触发上拉加载拖动距离
+      auto:true,//可选,默认false.自动上拉加载一次
+      contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+      contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+      callback :pullfresh-function //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+    }
+  }
+});
+```
+##### 重置上拉加载
+	调用.refresh(true)方法，可重置上拉加载控件
+```javascript
+  mui('#pullup-container').pullRefresh().refresh(true);
+```
+
