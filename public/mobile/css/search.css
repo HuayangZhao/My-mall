@@ -1,3 +1,6 @@
+.mui-icon-back {
+  color: #fff0ff;
+}
 .searchBox {
   position: absolute;
   top: 65px;
@@ -8,6 +11,7 @@
 }
 .searchBox .searchText {
   position: relative;
+  padding-right: 80px;
 }
 .searchBox .searchText input,
 .searchBox .searchText button {
@@ -18,7 +22,6 @@
 }
 .searchBox .searchText input {
   padding: 0px;
-  padding-right: 80px;
   margin-bottom: 0;
   width: 100%;
 }
@@ -28,7 +31,9 @@
   right: 0;
   width: 80px;
   height: 100%;
+  text-align: center;
   background-color: #ff8a00;
+  color: #fff;
 }
 .searchBox .history {
   padding-top: 20px;

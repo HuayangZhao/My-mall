@@ -63,6 +63,8 @@
 .area li .shadow a:first-child p {
   text-align: center;
   margin: 5px 0;
+  height: 63px;
+  overflow: hidden;
 }
 .area li .shadow a:first-child span {
   font-size: 12px;
