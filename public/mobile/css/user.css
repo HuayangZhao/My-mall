@@ -1,0 +1,10 @@
+.mui-content {
+  background-color: #fff;
+}
+.mui-content .mui-table-view a {
+  font-size: 14px;
+}
+.mui-content .mui-table-view a.logout {
+  text-align: center;
+}
+/*# sourceMappingURL=user.css.map */

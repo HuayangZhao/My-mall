@@ -1,0 +1,13 @@
+.addAddress {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+}
+.addAddress a {
+  color: black;
+}
+.mui-media-body {
+  font-size: 14px;
+}
+/*# sourceMappingURL=address.css.map */
