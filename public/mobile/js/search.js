@@ -25,5 +25,7 @@ if (localStorage.getItem('history')){
 // 点击清空历史
 $('.clearHistory').on('click',function(){
     localStorage.removeItem('history');
+    // 需要把数组清空，不然再次加载页面还是根据数组来渲染搜索历史
+    keyWord = [];
     $('.historyKeys').html('');
 })

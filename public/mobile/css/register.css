@@ -1,0 +1,29 @@
+.mui-content {
+  background-color: #fff;
+}
+.mui-pull-right {
+  color: #ff8a00;
+}
+button.mui-btn-danger {
+  border: #ff8a00;
+  background-color: #ff8a00;
+  width: 170px;
+  height: 37px;
+  font-size: 16px;
+}
+.login {
+  font-size: 14px;
+  color: #ff8a00;
+  margin-right: 15px;
+}
+.getCode {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #ff8a00;
+}
+input::-webkit-input-placeholder {
+  color: #666;
+  font-size: 12px;
+}
+/*# sourceMappingURL=register.css.map */
