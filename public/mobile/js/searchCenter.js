@@ -1,17 +1,6 @@
 mui('.mui-scroll-wrapper').scroll({
     deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 });
-// 获取搜索页面传过来的参数 url
-function getKey(url,name){
-    var arr = url.substr(location.href.indexOf('?')+1).split('&');
-    for (var i = 0 ; i < arr.length ; i ++){
-        var count = arr[i].split('=')
-        if (count[0] == name){
-            return count[1];
-        }
-    }
-    return;
-}
 // 获取key参数
 var keyWord = getKey(location.href, 'key');
 var index = 1;

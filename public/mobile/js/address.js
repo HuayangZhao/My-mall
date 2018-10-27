@@ -5,7 +5,7 @@ $(function(){
         url:'/address/queryAddress ',
         type:'get',
         success:function(res){
-            // console.log(res);
+            console.log(res);
             result=res;
             var html = template('address',{res:res});
             $('.mui-table-view').html(html);
@@ -45,7 +45,8 @@ $(function(){
              if(result[i].id == id){
                  // 把对应的数据存储到本地
                  localStorage.setItem( 'userAddress',JSON.stringify(result[i]));
-                 location.href = 'addAddress.html';
+                 // 设置参数区分是添加地址还是修改地址 添加地址isEdit=0 修改=1
+                 location.href = 'addAddress.html?isEdit=1';
              }
         }
     })
