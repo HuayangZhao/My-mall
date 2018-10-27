@@ -1,6 +1,6 @@
 
     // 恢复跳转
-    $('body').on('click','a',function(){
+    $('body').on('tap','a',function(){
         mui.openWindow({
             url:$(this).attr("href")
         });

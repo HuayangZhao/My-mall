@@ -69,11 +69,8 @@ $(function(){
                 }else {
                     mui.alert('添加失败');
                 }
-
             }
-
         })
-
     })
     var picker = new mui.PopPicker({layer:3});
     picker.setData(cityData);
@@ -83,6 +80,4 @@ $(function(){
             $('.city').val(selectItems[0].text+selectItems[1].text+selectItems[2].text);
         });
     })
-
-
 })
