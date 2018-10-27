@@ -45,23 +45,27 @@
 </nav>
 <div class="mui-content">
     <form class="mui-input-group">
-        <div class="mui-input-row">
-            <input type="text" class="mui-input-clear userName" placeholder="收货人姓名">
-        </div>
-        <div class="mui-input-row">
-            <input type="text" class="mui-input-clear zipCode" placeholder="邮编">
-        </div>
-        <div class="mui-input-row">
-            <input type="text" class="mui-input-clear city" placeholder="省市区" readonly>
-        </div>
-        <div class="mui-input-row">
-            <input type="text" class="mui-input-clear address" placeholder="详细地址">
-        </div>
-        <div class="mui-input-row confirm">
-            <span>确认</span>
-        </div>
+        <!--模板-->
+
     </form>
 </div>
+<script type="text/template" id="userAddressInfo">
+    <div class="mui-input-row">
+        <input type="text" class="mui-input-clear userName" placeholder="收货人姓名"  value="<%=recipients%>">
+    </div>
+    <div class="mui-input-row">
+        <input type="text" class="mui-input-clear zipCode" placeholder="邮编" value="<%=postCode%>">
+    </div>
+    <div class="mui-input-row">
+        <input type="text" class="mui-input-clear city" placeholder="省市区" readonly value="<%=address%>">
+    </div>
+    <div class="mui-input-row">
+        <input type="text" class="mui-input-clear address" placeholder="详细地址" value="<%=addressDetail%>">
+    </div>
+    <div class="mui-input-row confirm">
+        <span class="add">确认</span>
+    </div>
+</script>
 <script src="assets/mui/js/mui.min.js"></script>
 <script src="assets/mui/js/mui.picker.js"></script>
 <script src="assets/mui/js/mui.poppicker.js"></script>
