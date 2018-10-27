@@ -23,7 +23,7 @@ function getData(){
             price:priceSort
         },
         success:function(result){
-            // console.log(result);
+            console.log(result);
             html += template('showProduct',{res:result.data});
             $('.area ul').html(html);
             //1、加载完新数据后，必须执行如下代码，true表示没有更多数据了：

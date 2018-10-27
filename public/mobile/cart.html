@@ -8,24 +8,34 @@
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/categort.css">
+    <style>
+        .nowPrice,.oldPrice,.sizeNum {
+            font-size: 14px;
+            color: #ccc;
+        }
+        .nowPrice {
+            font-size: 16px;
+            color: #ff8a00;
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
-    <a href="index.html"><span class="mui-icon mui-icon-back"></span></a>
-    <h1 class="mui-title">商品分类</h1>
+    <a href="productDetail.html" class="mui-icon mui-icon-back mui-pull-left"></a>
+    <h1 class="mui-title">我的购物车</h1>
     <a href="search.html" class="mui-icon mui-icon-search mui-pull-right"></a>
 </header>
 <nav class="mui-bar mui-bar-tab my-footer">
-    <a class="mui-tab-item " href="index.html">
+    <a class="mui-tab-item" href="index.html">
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
     </a>
-    <a class="mui-tab-item mui-active" href="category.html">
+    <a class="mui-tab-item" href="category.html">
         <span class="mui-icon mui-icon-bars"></span>
         <span class="mui-tab-label">分类</span>
     </a>
-    <a class="mui-tab-item" href="cart.html">
+    <a class="mui-tab-item mui-active" href="cart.html">
         <span class="mui-icon iconfont icon-daohanggouwuche fa fa-shopping-cart" aria-hidden="true"></span>
         <!--<i class="fa fa-shopping-cart" aria-hidden="true"></i>-->
         <span class="mui-tab-label">购物车</span>
@@ -35,44 +45,32 @@
         <span class="mui-tab-label">会员中心</span>
     </a>
 </nav>
-<div class="my-content">
-    <div class="leftClassify">
-        <div class="mui-scroll-wrapper">
-            <div class="mui-scroll first">
-                <!--一级分类动态渲染-->
-            </div>
-        </div>
-    </div>
-    <div class="rightClassify">
-        <div class="mui-scroll-wrapper">
-            <div class="mui-scroll">
-                <ul class="second">
-                    <!--二级分类动态渲染-->
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="mui-content">
+    <ul class="mui-table-view">
+
+    </ul>
 </div>
 <script src="assets/mui/js/mui.min.js"></script>
 <script src="assets/zepto/zepto.min.js"></script>
 <script src="assets/artTemplate/template-native.js"></script>
-<!--一级分类模板-->
-<script type="text/template" id="category-first">
-    <% for (var i = 0 ; i < rows.length ; i ++) {%>
-    <a href="javascript:;" data-id="<%= rows[i].id %>"><%= rows[i].categoryName %></a>
-    <% }%>
+<script type="text/template" id="cart">
+    <%for (var i=0;i<data.length;i++){%>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="<%=data[i].pic[0].picAddr %>">
+            <div class="mui-media-body">
+                <p class='mui-ellipsis'><%=data[i].proName %></p>
+                <input type="checkbox">
+                <span class="nowPrice">￥<%=data[i].price %></span>
+                <del class="oldPrice">￥<%= data[i].oldPrice%></del>
+                <span class="sizeNum">尺码：<%= data[i].size%>  数量：<%= data[i].num%></span>
+            </div>
+        </a>
+    </li>
+    <% } %>
 </script>
-<!--二级分类模板-->
-<script type="text/template" id="category-second">
-    <% for (var i = 0 ; i < rows.length ; i ++) {%>
-    <li><a href="javascript:;"><img src="<%=rows[i].brandLogo%>" alt=""><p><%=rows[i].brandName%></p></a></li>
-    <% }%>
-    <%if(!rows.length){%>
-        <div class="resources">未搜索到相关商品</div>
-    <%}%>
-</script>
-<script src="js/category.js"></script>
 <script src="js/public.js"></script>
+<script src="js/cart.js"></script>
+
 </body>
 </html>
-

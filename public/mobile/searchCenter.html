@@ -53,26 +53,25 @@
         </div>
     </div>
 </div>
-
 <script src="assets/mui/js/mui.min.js"></script>
 <script src="assets/zepto/zepto.min.js"></script>
 <script src="assets/artTemplate/template-native.js"></script>
+<script src="js/public.js"></script>
 <script type="text/template" id="showProduct">
     <%for (var i = 0 ; i < res.length ; i ++) { %>
     <li>
         <div class="shadow">
-            <a href="javascript:;">
+            <a href="productDetail.html">
                 <img src="<%=res[i].pic[0].picAddr%>" alt="">
                 <p><%=res[i].proName%></p>
                 <span>￥<%=res[i].price%></span>
                 <del>￥<%=res[i].oldPrice%></del>
             </a>
-            <a href="javascript:;">立即购买</a>
+            <a href="productDetail.html?id=<%=res[i].id%>">立即购买</a>
         </div>
     </li>
     <% } %>
 </script>
-<script src="js/public.js"></script>
 <script src="js/searchCenter.js"></script>
 </body>
 </html>
