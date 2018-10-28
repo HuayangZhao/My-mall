@@ -61,7 +61,7 @@
     <%for (var i = 0 ; i < res.length ; i ++) { %>
     <li>
         <div class="shadow">
-            <a href="productDetail.html">
+            <a href="productDetail.html?id=<%=res[i].id%>">
                 <img src="<%=res[i].pic[0].picAddr%>" alt="">
                 <p><%=res[i].proName%></p>
                 <span>￥<%=res[i].price%></span>

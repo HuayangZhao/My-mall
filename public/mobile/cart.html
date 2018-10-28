@@ -9,20 +9,133 @@
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.css">
     <link rel="stylesheet" href="css/base.css">
     <style>
-        .nowPrice,.oldPrice,.sizeNum {
+        .nowPrice, .oldPrice, .sizeNum {
             font-size: 14px;
             color: #ccc;
         }
+
         .nowPrice {
             font-size: 16px;
             color: #ff8a00;
             font-weight: 700;
         }
+
+        .settlementInfo {
+            height: 100%;
+            padding: 0 10px;
+            float: left;
+            font-size: 16px;
+            line-height: 65px;
+        }
+
+        .settlementInfo input {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .settlement {
+            float: right;
+            height: 100%;
+            width: 150px;
+            text-align: center;
+            line-height: 65px;
+            background-color: #ff8a00;
+            color: white;
+        }
+        .total {
+            color: red;
+            font-size: 20px;
+        }
+        .editProduct {
+            display: none;
+            position: absolute;
+            top: 180px;
+            /*bottom: 80px;*/
+            left: 50px;
+            right: 50px;
+            background-color: #fff;
+            border: 2px solid #ff8a00;
+            border-radius: 10px;
+            padding: 20px 40px 0 40px;
+        }
+        .editProduct h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .detail-size {
+            flex-wrap: wrap;
+            justify-content:center;
+        }
+        .detail-size span {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            text-align: center;
+            line-height: 25px;
+        }
+        /*.detail-size span:first-child{*/
+            /*border:none;*/
+            /*width: 65px;*/
+            /*text-align: left;*/
+        /*}*/
+        .detail-num{
+            padding:10px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    .detail-size {
+        padding: 0 40px;
+        display: flex;
+    }
+        .detail-num span{
+            display:inline-block;
+            width:28px;
+            height:28px;
+            border:1px solid #ccc;
+            line-height:28px;
+            text-align:center;
+        }
+        span.active {
+            background-color: #ff8a00;
+        }
+        .detail-num input{
+            display:inline-block;
+            width:28px;
+            height:28px;
+            line-height:normal;
+            margin:0;
+            padding:0;
+            border-radius:0;
+            border-left:none;
+            border-right:none;
+            vertical-align:top;
+            text-align:center;
+        }
+        .editProduct button {
+            width: 50%;
+            height: 50px;
+            display: block;
+            border: none;
+            float: left;
+            border-top: 1px solid #ccc;
+            font-weight: 900;
+            font-size: 20px;
+            color: #ff8a00;
+        }
+        .editProduct .left {
+            border-right: 1px solid #ccc;
+        }
+
     </style>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
-    <a href="productDetail.html" class="mui-icon mui-icon-back mui-pull-left"></a>
+    <a href="searchCenter.html" class="mui-icon mui-icon-back mui-pull-left"></a>
     <h1 class="mui-title">我的购物车</h1>
     <a href="search.html" class="mui-icon mui-icon-search mui-pull-right"></a>
 </header>
@@ -47,27 +160,62 @@
 </nav>
 <div class="mui-content">
     <ul class="mui-table-view">
-
+        <!--模板-->
     </ul>
+</div>
+<div class="editProduct">
+        <!--模板-->
 </div>
 <script src="assets/mui/js/mui.min.js"></script>
 <script src="assets/zepto/zepto.min.js"></script>
 <script src="assets/artTemplate/template-native.js"></script>
 <script type="text/template" id="cart">
-    <%for (var i=0;i<data.length;i++){%>
+    <% var total = 0 ;%>
+    <% for(var i=0;i<res.length;i++){%>
     <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-            <img class="mui-media-object mui-pull-left" src="<%=data[i].pic[0].picAddr %>">
-            <div class="mui-media-body">
-                <p class='mui-ellipsis'><%=data[i].proName %></p>
-                <input type="checkbox">
-                <span class="nowPrice">￥<%=data[i].price %></span>
-                <del class="oldPrice">￥<%= data[i].oldPrice%></del>
-                <span class="sizeNum">尺码：<%= data[i].size%>  数量：<%= data[i].num%></span>
-            </div>
-        </a>
+        <div class="mui-slider-right mui-disabled">
+            <span class="mui-btn mui-btn-blue edit" data-editid="<%= res[i].id%>">编辑</span>
+            <a href="javascript:;" class="mui-btn mui-btn-red delete" data-id="<%= res[i].id%>">删除</a>
+        </div>
+        <div class="mui-slider-handle">
+            <a href="javascript:;">
+                <img class="mui-media-object mui-pull-left" src="<%=res[i].pic[0].picAddr %>">
+                <div class="mui-media-body">
+                    <p class='mui-ellipsis'><%=res[i].proName %></p>
+                    <input type="checkbox" data-nitPrice="<%=res[i].price %>" data-num="<%= res[i].num%>"
+                           class="choose">
+                    <span class="nowPrice">￥<%=res[i].price %> * <%= res[i].num%></span>
+                    <% total += res[i].price*res[i].num%>
+                    <del class="oldPrice">￥<%= res[i].oldPrice%></del>
+                    <span class="sizeNum">尺码：<%= res[i].size%>  数量：<%= res[i].num%></span>
+                </div>
+            </a>
+        </div>
     </li>
     <% } %>
+    <li class="mui-table-view-cell mui-media">
+        <div class="settlementInfo">
+            <input type="checkbox" data-totalAll="<%=total%>" class="chooseAll">全选 &nbsp;&nbsp;&nbsp;&nbsp;合计：
+            <span class="total">0</span>￥
+        </div>
+        <span class="settlement">结算</span>
+    </li>
+</script>
+<script type="text/template" id="editP">
+    <h3>编辑商品</h3>
+    <div class="detail-size">
+        尺码：
+        <% var size = productSize.split('-')%>
+        <% for(var i=size[0];i <= size[1];i++){ %>
+        <span class="size"><%=i %></span>
+        <% } %>
+    </div>
+    <hr>
+    <div class="detail-num">
+        数量：<span class="reduce">-</span><input type="text" class="num" value="1" readonly><span class="plus" data-num="<%=productNum%>">+</span>
+    </div>
+    <button class="left"  data-id="<%=id %>">取消</button>
+    <button class="right" data-id="<%=id %>">确定</button>
 </script>
 <script src="js/public.js"></script>
 <script src="js/cart.js"></script>
